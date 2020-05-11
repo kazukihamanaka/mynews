@@ -19,20 +19,21 @@ public function create(Request $request)
       // Varidationを行う
       $this->validate($request, Profile::$rules);
 
-      $news = new Profile;
+      $profile = new Profile;
       $form = $request->all();
 
-  
+
 
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
 
 
       // データベースに保存する
-      $news->fill($form);
-      $news->save();
+      $profile->fill($form);
+      $profile->save();
 
       return redirect('admin/profile/create');
   }
+
 
 }
