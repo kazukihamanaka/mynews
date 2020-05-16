@@ -20,4 +20,5 @@ class News extends Model
        return $this->hasMany('App\History');
 
      }
+
  }
