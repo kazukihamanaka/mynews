@@ -58,7 +58,7 @@ public function create(Request $request)
         // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
 
-        return redirect('admin/profile/edit/?id=1');
+        return redirect('/');
 
 }
 }
