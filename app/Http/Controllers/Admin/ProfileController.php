@@ -58,10 +58,10 @@ public function create(Request $request)
   // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
 
-       $profilehistories = new ProfileHistory;
-       $profilehistories->profile_id = $profile->id;
-       $profilehistories->edited_at = Carbon::now();
-       $profilehistories->save();
+       $history = new ProfileHistory;
+       $history->profile_id = $profile->id;
+       $history->edited_at = Carbon::now();
+       $history->save();
 
 
         return redirect('/');
