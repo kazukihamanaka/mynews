@@ -50,21 +50,19 @@ public function create(Request $request)
   public function update(Request $request)
     {
         // Validationをかける
-        $this->validate($request, Profile::$rules);
+       $this->validate($request, Profile::$rules);
         // News Modelからデータを取得する
-        $profile = Profile::find($request->id);
-        $profile_form = $request->all();
-        unset($profile_form['_token']);
+       $profile = Profile::find($request->id);
+       $profile_form = $request->all();
+       unset($profile_form['_token']);
   // 該当するデータを上書きして保存する
-        $profile->fill($profile_form)->save();
-
+       $profile->fill($profile_form)->save();
        $history = new ProfileHistory;
        $history->profile_id = $profile->id;
        $history->edited_at = Carbon::now();
-       $history->save();
+       $historys->save();
 
-
-        return redirect('/');
+       return redirect('/');
 
 }
 }

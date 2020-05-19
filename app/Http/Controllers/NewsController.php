@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
-
-
-  // 追記
-  use App\News;
+use App\News;
 
   class NewsController extends Controller
   {
