@@ -12,7 +12,7 @@ class CreateProfilesTable extends Migration
      * @return void
      */
     public function up()
-    {
+{
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -20,8 +20,8 @@ class CreateProfilesTable extends Migration
             $table->string('hobby');
             $table->string('introduction');
             $table->timestamps();
-        });
-    }
+});
+}
 
     /**
      * Reverse the migrations.
@@ -29,7 +29,7 @@ class CreateProfilesTable extends Migration
      * @return void
      */
     public function down()
-    {
+{
         Schema::dropIfExists('profiles');
-    }
+}
 }

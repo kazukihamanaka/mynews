@@ -12,14 +12,14 @@ class CreateHistoriesTable extends Migration
      * @return void
      */
     public function up()
-    {
+{
         Schema::create('histories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('news_id');
             $table->string('edited_at');
             $table->timestamps();
-        });
-    }
+});
+}
 
     /**
      * Reverse the migrations.
@@ -27,7 +27,7 @@ class CreateHistoriesTable extends Migration
      * @return void
      */
     public function down()
-    {
+{
         Schema::dropIfExists('histories');
-    }
+}
 }
